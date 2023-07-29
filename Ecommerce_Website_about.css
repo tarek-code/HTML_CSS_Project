@@ -1,23 +1,126 @@
-/* ... existing CSS styles ... */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ded7d7;
+  color: #fff;
+  padding: 10px;
+}
+
+nav {
+  padding-left: 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(148, 133, 133); /* Set default link color to white */
+}
+
+/* Style the active link to appear black */
+nav ul li a.active {
+  color: black;
+}
 
 main {
-    padding: 20px;
-  }
-  
-  .about-section {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .about-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .about-section p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
+  padding: 20px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Show four items per row */
+  grid-gap: 20px;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  width: 45%; /* Adjust the width to fit four items in a row */
+  position: relative; /* Add relative positioning for ins element */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-item img {
+  max-width: 100%; /* Set maximum width for the image to fit container */
+}
+
+.product-item .price {
+  display: flex; /* Use flexbox to position prices side by side */
+  justify-content: center;
+  align-items: center;
+}
+
+.product-item .price del {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px; /* Adjust font size of previous price */
+  margin-right: 5px;
+}
+
+.product-item .price ins {
+  color: #000;
+  font-size: 16px; /* Adjust font size of new price */
+  position: relative;
+}
+
+.product-item .price ins::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5px; /* Adjust the position of the line */
+  width: calc(100% - 10px); /* Make the line slightly shorter */
+}
+
+.add-to-cart-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #45a049;
+}
+
+/* Additional styles for the About Us page */
+
+.about-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
